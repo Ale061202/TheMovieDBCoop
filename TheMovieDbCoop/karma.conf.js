@@ -25,7 +25,7 @@ module.exports = function (config) {
       suppressAll: true // removes the duplicated traces
     },
     coverageReporter: {
-      dir: require('path').join(__dirname, './coverage/star-wars-complete'),
+      dir: require('path').join(__dirname, './coverage/the-movie-db-coop'),
       subdir: '.',
       reporters: [
         { type: 'html' },
