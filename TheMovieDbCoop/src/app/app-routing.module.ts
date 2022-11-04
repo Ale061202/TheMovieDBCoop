@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { NavbarComponent } from "./components/navbar/navbar.component";
 
 // layouts
 import { AdminComponent } from "./layouts/admin/admin.component";
@@ -22,7 +23,7 @@ import { ProfileComponent } from "./views/profile/profile.component";
 
 const routes: Routes = [
   // admin views
-  {
+  /*{
     path: "admin",
     component: AdminComponent,
     children: [
@@ -47,7 +48,9 @@ const routes: Routes = [
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
-  { path: "**", redirectTo: "", pathMatch: "full" },
+  { path: "**", redirectTo: "", pathMatch: "full" },*/
+  {path: 'navbar', component: NavbarComponent},
+  {path: '',pathMatch: 'full',redirectTo: 'navbar'}
 ];
 
 @NgModule({
