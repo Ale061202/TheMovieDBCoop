@@ -49,6 +49,9 @@ import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from "@angular/common/http";
+import { ActorListComponent } from './components/actor-list/actor-list.component';
+import { ActorDetailComponent } from './components/dialog/actor-detail/actor-detail.component';
+import { FavouriteMoviesComponent } from './components/favourite-movies/favourite-movies.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +90,9 @@ import { HttpClientModule } from "@angular/common/http";
     LandingComponent,
     ProfileComponent,
     NavbarComponent,
+    ActorListComponent,
+    ActorDetailComponent,
+    FavouriteMoviesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
