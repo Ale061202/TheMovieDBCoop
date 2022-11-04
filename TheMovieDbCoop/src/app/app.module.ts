@@ -52,6 +52,7 @@ import { HttpClientModule } from "@angular/common/http";
 import { ActorListComponent } from './components/actor-list/actor-list.component';
 import { ActorDetailComponent } from './components/dialog/actor-detail/actor-detail.component';
 import { FavouriteMoviesComponent } from './components/favourite-movies/favourite-movies.component';
+import { MoviesComponent } from './components/movies/movies.component';
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { FavouriteMoviesComponent } from './components/favourite-movies/favourit
     ActorListComponent,
     ActorDetailComponent,
     FavouriteMoviesComponent,
+    MoviesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
