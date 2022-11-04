@@ -47,6 +47,9 @@ import { PagesDropdownComponent } from "./components/dropdowns/pages-dropdown/pa
 import { NotificationDropdownComponent } from "./components/dropdowns/notification-dropdown/notification-dropdown.component";
 import { SidebarComponent } from "./components/sidebar/sidebar.component";
 import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user-dropdown.component";
+import { ActorListComponent } from './components/actor-list/actor-list.component';
+import { ActorDetailComponent } from './components/dialog/actor-detail/actor-detail.component';
+import { FavouriteMoviesComponent } from './components/favourite-movies/favourite-movies.component';
 
 @NgModule({
   declarations: [
@@ -84,6 +87,9 @@ import { UserDropdownComponent } from "./components/dropdowns/user-dropdown/user
     IndexComponent,
     LandingComponent,
     ProfileComponent,
+    ActorListComponent,
+    ActorDetailComponent,
+    FavouriteMoviesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
