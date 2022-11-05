@@ -27,6 +27,10 @@ export class MoviesComponent implements OnInit {
     });
   }
 
+  getMovieImg(movie: Movie): string{
+    return `https://www.themoviedb.org/t/p/w600_and_h900_bestv2/${movie.poster_path}`;
+  }
+
   /* MÉTODO PARA COGER EL VIDEO DEL TRAILER
 
   getVideoUrl(movie: Movie, movieDetails: MovieDetails){
