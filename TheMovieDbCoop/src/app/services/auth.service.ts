@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs';
-import { RequestTokenResponse } from '../interfaces/request-token.interface';
+import { RequestTokenResponse } from '../models/interfaces/request-token.interface';
 import { environment } from 'src/environments/environment';
 import { CreateSessionDto } from '../models/dto/create-session.dto';
-import { CreateSessionResponse } from '../interfaces/create-session.interface';
+import { CreateSessionResponse } from '../models/interfaces/create-session.interface';
 import { DeleteSessionDto } from '../models/dto/delete-session.dto';
-import { DeleteSessionResponse } from '../interfaces/delete-session.interface';
+import { DeleteSessionResponse } from '../models/interfaces/delete-session.interface';
 
 @Injectable({
   providedIn: 'root'
