@@ -52,7 +52,7 @@ const routes: Routes = [
   { path: "**", redirectTo: "", pathMatch: "full" },*/
   {path: 'navbar', component: NavbarComponent},
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
-  {path: 'actors-detail/:id', component: ActorDetailComponent},
+  {path: 'actor-detail/:id', component: ActorDetailComponent},
 ];
 
 @NgModule({
