@@ -16,8 +16,23 @@ export class NavbarComponent implements OnInit {
   approved = false;
   reqToken = '';
   navbarOpen = false;
+  sessionId: string = '';
+  userName = '';
+  avatar: string;
 
   ngOnInit(): void {
+    this.sessionId = localStorage.getItem('session_id');
+    if(this.sessionId != null){
+      this.authService.getAccountDetail(this.sessionId).subscribe(resp => {
+        this.userName = resp.username;
+        this.avatar = `https://www.themoviedb.org/t/p/w32_and_h32_face/${resp.avatar.tmdb.avatar_path}`
+      });
+    }else{
+      this.createSession();
+    }
+  }
+
+  createSession(){
     this.route.queryParams.subscribe((qParams) => {
       const ap = qParams['approved'];
       const rToken = qParams['request_token'];
