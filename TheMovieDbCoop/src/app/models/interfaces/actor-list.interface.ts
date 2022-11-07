@@ -5,8 +5,8 @@ export interface ActorListResponse {
     total_pages:   number;
     total_results: number;
 }
-
 export interface Actors {
+
     adult:                boolean;
     gender:               number;
     id:                   number;
