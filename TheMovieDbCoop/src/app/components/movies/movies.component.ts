@@ -73,16 +73,6 @@ export class MoviesComponent implements OnInit {
     return color;
   }
 
-  /* MÉTODO PARA COGER EL VIDEO DEL TRAILER
-
-  getVideoUrl(movie: Movie, movieDetails: MovieDetails){
-    if(movie.video)
-      return `https://www.youtube.com/watch?v=${movieDetails.key}`;
-
-    else
-      return 'https://www.youtube.com/watch?v=GPXkjtpGCFI&ab_channel=KushMaster';
-  }*/
-
 
 
 }
