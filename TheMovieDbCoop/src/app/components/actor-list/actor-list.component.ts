@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { Actors } from 'src/app/models/interfaces/actor-list.interface';
 import { ActorService } from 'src/app/services/actor.service';
 import { environment } from 'src/environments/environment';
-import { Actors } from 'src/app/models/interfaces/actor-list.interface';
+
 
 @Component({
   selector: 'app-actor-list',

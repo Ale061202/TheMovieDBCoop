@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CreateSessionDto } from 'src/app/models/dto/create-session.dto';
 import { DeleteSessionDto } from 'src/app/models/dto/delete-session.dto';
 import { AuthService } from 'src/app/services/auth.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-navbar',
@@ -26,6 +27,7 @@ export class NavbarComponent implements OnInit {
       this.authService.getAccountDetail(this.sessionId).subscribe(res => {
         this.username = res.username;
         this.avatar = `https://www.themoviedb.org/t/p/w32_and_h32_face/${res.avatar.tmdb.avatar_path}`
+
       })
     }else{
       this.createSession();

@@ -20,3 +20,4 @@ export interface Gravatar {
 export interface Tmdb {
     avatar_path: string;
 }
+

@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { MovieDetailsResponse, MovieVideo, MovieVideoResponse } from 'src/app/interfaces/movies.interface';
+import { RatingDto } from 'src/app/models/dto/create-rating.dto';
+import { MovieDetailsResponse, MovieVideo, MovieVideoResponse } from 'src/app/models/interfaces/movies.interface';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -17,6 +18,7 @@ export class MovieDetailsComponent implements OnInit {
   movieImg = '';
   backImg = '';
   videos: MovieVideo [] = [];
+  rating: number = 0;
 
   constructor(private movieService: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
 
@@ -41,11 +43,21 @@ export class MovieDetailsComponent implements OnInit {
     });
   }
 
+  rateMovie(rating: number){
+    let ratingDto: RatingDto = {
+      value : rating
+    }
+    this.movieService.createRating(this.movieId, ratingDto, localStorage.getItem('session_id') );
+  }
 
 
   getVideoUrl(video: MovieVideo){
 
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.key}`);
+    if(video.id != null)
+      return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.key}`);
+
+    else
+      return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/GPXkjtpGCFI');
   }
 
 }

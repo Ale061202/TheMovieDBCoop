@@ -3,11 +3,11 @@ import { Movie } from 'src/app/models/interfaces/movies.interface';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
-  selector: 'app-movies',
-  templateUrl: './movies.component.html',
-  styleUrls: ['./movies.component.css']
+  selector: 'app-rated-movies',
+  templateUrl: './rated-movies.component.html',
+  styleUrls: ['./rated-movies.component.css']
 })
-export class MoviesComponent implements OnInit {
+export class RatedMoviesComponent implements OnInit {
 
   @Input()
   get color(): string {
@@ -18,21 +18,25 @@ export class MoviesComponent implements OnInit {
   }
   private _color = "light";
 
-  totalPages: number = 0;
   page: number = 1;
+  accountId: number;
+  sessionId: string = localStorage.getItem('session_id');
   movies: Movie[]=[];
 
   constructor(private moviesService: MoviesService) { }
 
   ngOnInit(): void {
-    this.getAllMovies(this.page);
+
+    this.getRatedMovies(this.page);
   }
 
-  getAllMovies(page: number){
+  getRatedMovies(page: number){
+    this.moviesService.getAccountId(this.sessionId).subscribe(resp => {
+      this.accountId = resp.id;
 
-    this.moviesService.getMoviesPage(page).subscribe(resp => {
-      this.movies = resp.results
-      this.totalPages = resp.total_pages;
+      this.moviesService.getRatedMovies(this.sessionId, page).subscribe(resp => {
+        this.movies = resp.results;
+      });
     });
   }
 
@@ -42,7 +46,7 @@ export class MoviesComponent implements OnInit {
 
   getPage(page: number) {
     if(page > 0){
-      this.getAllMovies(page)
+      this.getRatedMovies(page)
       this.page = page;
     }
   }
@@ -72,5 +76,9 @@ export class MoviesComponent implements OnInit {
 
     return color;
   }
+  /*
+  createRating(movie: Movie, rating: number){
+    this.moviesService.createRating(movie.id, rating);
+  }*/
 
 }

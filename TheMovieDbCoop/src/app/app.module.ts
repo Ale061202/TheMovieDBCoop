@@ -54,6 +54,8 @@ import { ActorDetailComponent } from './components/dialog/actor-detail/actor-det
 import { FavouriteMoviesComponent } from './components/favourite-movies/favourite-movies.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { RatedMoviesComponent } from './components/rated-movies/rated-movies.component';
+
 
 @NgModule({
   declarations: [
@@ -97,6 +99,7 @@ import { MovieDetailsComponent } from './components/movie-details/movie-details.
     FavouriteMoviesComponent,
     MoviesComponent,
     MovieDetailsComponent,
+    RatedMoviesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
