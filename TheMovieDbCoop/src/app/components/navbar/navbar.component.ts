@@ -1,16 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute, Router } from '@angular/router';
-import { CreateSessionDto } from 'src/app/models/dto/create-session.dto';
-import { DeleteSessionDto } from 'src/app/models/dto/delete-session.dto';
+import { CreateSessionDto } from "src/app/models/dto/create-session.dto";
+import { DeleteSessionDto } from "src/app/models/dto/delete-session.dto";
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.css']
+  selector: "app-navbar",
+  templateUrl: "./navbar.component.html",
 })
 export class NavbarComponent implements OnInit {
-
   navbarOpen = false;
   reqToken = '';
   approved = false;
@@ -76,5 +74,4 @@ export class NavbarComponent implements OnInit {
       }
     });
   }
-
 }

@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { Movie, MovieDetailsResponse, Movies, MovieVideoResponse } from '../interfaces/movies.interface';
+import { Movie, MovieDetailsResponse, Movies, MovieVideoResponse } from '../models/interfaces/movies.interface';
 
 @Injectable({
   providedIn: 'root'
