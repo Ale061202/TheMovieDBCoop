@@ -53,6 +53,7 @@ import { ActorListComponent } from './components/actor-list/actor-list.component
 import { ActorDetailComponent } from './components/dialog/actor-detail/actor-detail.component';
 import { FavouriteMoviesComponent } from './components/favourite-movies/favourite-movies.component';
 import { MoviesComponent } from './components/movies/movies.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { MoviesComponent } from './components/movies/movies.component';
     ActorDetailComponent,
     FavouriteMoviesComponent,
     MoviesComponent,
+    MovieDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],

@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { MoviesComponent } from "./components/movies/movies.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 // layouts
@@ -50,6 +51,7 @@ const routes: Routes = [
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },*/
   {path: 'navbar', component: NavbarComponent},
+  {path: 'movies', component: MoviesComponent},
   {path: '',pathMatch: 'full',redirectTo: 'navbar'}
 ];
 
