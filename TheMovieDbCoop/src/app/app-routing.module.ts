@@ -23,6 +23,7 @@ import { RegisterComponent } from "./views/auth/register/register.component";
 import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
+import { MovieDetailsComponent } from "./components/movie-details/movie-details.component";
 
 const routes: Routes = [
   // admin views
@@ -55,9 +56,9 @@ const routes: Routes = [
   { path: "**", redirectTo: "", pathMatch: "full" },*/
   {path: 'navbar', component: NavbarComponent},
   {path: 'movies', component: MoviesComponent},
-  {path: '',pathMatch: 'full',redirectTo: 'navbar'}
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
+  {path: 'movie-detail/:id', component: MovieDetailsComponent}
 ];
 
 @NgModule({
