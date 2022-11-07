@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { ActorListComponent } from "./components/actor-list/actor-list.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
 // layouts
@@ -23,7 +24,7 @@ import { ProfileComponent } from "./views/profile/profile.component";
 
 const routes: Routes = [
   // admin views
-  /*{
+  {
     path: "admin",
     component: AdminComponent,
     children: [
@@ -31,6 +32,7 @@ const routes: Routes = [
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
+      { path: "actors", component: ActorListComponent},
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
@@ -43,7 +45,7 @@ const routes: Routes = [
       { path: "register", component: RegisterComponent },
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
-  },
+  },/*
   // no layout views
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
