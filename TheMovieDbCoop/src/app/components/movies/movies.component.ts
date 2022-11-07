@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/interfaces/movies.interface';
+import { FavouriteMovieDto } from 'src/app/models/dto/favourite-movie.dto';
+import { Movie } from 'src/app/models/interfaces/movies.interface';
+import { AccountService } from 'src/app/services/account.service';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -18,11 +21,12 @@ export class MoviesComponent implements OnInit {
   }
   private _color = "light";
 
+  @Input() popularMovies: Movie =  {} as Movie
   totalPages: number = 0;
   page: number = 1;
   movies: Movie[]=[];
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.getAllMovies(this.page);
@@ -73,4 +77,16 @@ export class MoviesComponent implements OnInit {
     return color;
   }
 
+
+  markAsFavourite(){
+    let favourites = new FavouriteMovieDto;
+    favourites.media_type = 'movie';
+    favourites.media_id = this.popularMovies.id;
+    favourites.favorite = true;
+    this.accountService.markAsFavourite(favourites).subscribe(resp => {
+      if(resp.success){
+        alert('Pelicula agregada a favoritos')
+      }
+    })
+  }
 }

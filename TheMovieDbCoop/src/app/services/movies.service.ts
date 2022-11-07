@@ -5,6 +5,8 @@ import { environment } from 'src/environments/environment';
 import { RatingDto } from '../models/dto/create-rating.dto';
 import { AccountDetailResponse } from '../models/interfaces/account-detail.interface';
 import { FilmRatedResponse, Movie, MovieDetailsResponse, Movies, MovieVideoResponse, RatedMoviesResponse } from '../models/interfaces/movies.interface';
+import { Movie, MovieDetailsResponse, Movies, MovieVideoResponse } from '../models/interfaces/movies.interface';
+
 
 @Injectable({
   providedIn: 'root'
