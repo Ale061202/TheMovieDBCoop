@@ -1,5 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
+import { ActorDetailComponent } from "./components/actor-detail/actor-detail.component";
 import { ActorListComponent } from "./components/actor-list/actor-list.component";
 import { NavbarComponent } from "./components/navbar/navbar.component";
 
@@ -52,7 +53,8 @@ const routes: Routes = [
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },*/
   {path: 'navbar', component: NavbarComponent},
-  {path: '',pathMatch: 'full',redirectTo: 'navbar'}
+  {path: '',pathMatch: 'full',redirectTo: 'navbar'},
+  {path: 'actor-detail/:id', component: ActorDetailComponent},
 ];
 
 @NgModule({
