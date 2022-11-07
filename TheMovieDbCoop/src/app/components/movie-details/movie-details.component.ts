@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
-import { MovieDetailsResponse, MovieVideo, MovieVideoResponse } from 'src/app/interfaces/movies.interface';
+import { MovieDetailsResponse, MovieVideo, MovieVideoResponse } from 'src/app/models/interfaces/movies.interface';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
