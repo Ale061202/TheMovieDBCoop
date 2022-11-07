@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Actors } from 'src/app/interfaces/actor-list.interface';
+import { Actors } from 'src/app/models/interfaces/actor-list.interface';
 import { ActorService } from 'src/app/services/actor.service';
 import { environment } from 'src/environments/environment';
 
@@ -43,7 +43,7 @@ export class ActorListComponent implements OnInit {
   }
 
   getPhotoUrl(poster: Actors){
-    return `${environment.posterPath}/w500/${poster.profile_path}`
+    return `https://image.tmdb.org/t/p/w500${poster.profile_path}`
   }
 
   getMovieUrl(poster: string){
