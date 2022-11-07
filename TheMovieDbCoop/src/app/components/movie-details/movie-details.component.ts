@@ -44,8 +44,12 @@ export class MovieDetailsComponent implements OnInit {
 
 
   getVideoUrl(video: MovieVideo){
+    debugger;
+    if(video.id != null)
+      return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.key}`);
 
-    return this.sanitizer.bypassSecurityTrustResourceUrl(`https://www.youtube.com/embed/${video.key}`);
+    else
+      return this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/GPXkjtpGCFI');
   }
 
 }

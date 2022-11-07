@@ -149,14 +149,27 @@
               </div>
             </div>
           </div>
-          <div style="display: flex; justify-content: center; margin-bottom: 10%;" >
-            <span *ngFor="let video of videos" style="margin: 5%;">
-              <div>
-                <iframe width="400" height="250" [src]="getVideoUrl(video)"
-                title="Trailer video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen></iframe>
-              </div>
+          <h3
+          class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2"
+          style="text-align: center;"
+          >
+          Trailers
+          </h3>
+          <div style="display: flex; flex-flow: row wrap; justify-content: center; margin-bottom: 10%;" >
+            <span *ngIf="videos[0] != undefined else noVideo">
+              <span *ngFor="let video of videos" style="margin: 5%;">
+                <div>
+                  <iframe width="400" height="250" [src]="getVideoUrl(video)"
+                  title="Trailer video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen></iframe>
+                </div>
+              </span>
             </span>
+            <ng-template #noVideo>
+              <iframe width="400" height="250" src="https://www.youtube.com/embed/GPXkjtpGCFI"
+              title="Trailer video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            </ng-template>
           </div>
         </div>
       </div>
