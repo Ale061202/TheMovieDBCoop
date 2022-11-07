@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from "@angular/core";
+import { Component, OnInit, ViewChild, ElementRef, Input } from "@angular/core";
 import { createPopper } from "@popperjs/core";
 
 @Component({
@@ -6,6 +6,7 @@ import { createPopper } from "@popperjs/core";
   templateUrl: "./index-dropdown.component.html",
 })
 export class IndexDropdownComponent implements OnInit {
+  @Input() approved = false;
   dropdownPopoverShow = false;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
   @ViewChild("popoverDropdownRef", { static: false })

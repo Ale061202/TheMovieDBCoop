@@ -1,12 +1,11 @@
 
 export interface ActorListResponse {
     page:          number;
-    results:       Actor[];
+    results:       Actors[];
     total_pages:   number;
     total_results: number;
 }
-
-export interface Actor {
+export interface Actors {
     adult:                boolean;
     gender:               number;
     id:                   number;
