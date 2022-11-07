@@ -1,72 +1,108 @@
-<div class="flex flex-wrap">
-  <div class="w-full lg:w-4/12 px4">
-    <div class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg mt-16">
-      <div class="px-6">
-        <div class="flex flex-wrap justify-center">
-          <div class="w-full px-4 flex justify-center">
-            <div class="relative">
-              <img alt="Foto de perfil de {{actorDetail.name}}" [src]="getImgActor(actorDetail.profile_path)"
-                class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-16 -ml-20 lg:-ml-16 max-w-150-px" />
-            </div>
-          </div>
-          <div class="w-full px-4 text-center mt-20"></div>
-        </div>
-  
-        <div class="text-center mt-24">
-          <h3 class="text-xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
-            {{actorDetail.name}}
-          </h3>
-  
-          <div class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase">
-            <i class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"></i>
-            {{actorDetail.place_of_birth}}
-          </div>
-  
-          <div class="mb-2 text-blueGray-600 mt-5">
-            <i class="fas fa-solid fa-calendar mr-2 text-lg text-blueGray-400"></i>
-            {{actorDetail.birthday}}
-          </div>
-  
-          <div class="mb-2 text-blueGray-600">
-            <i class="fas fa-solid fa-venus-mars mr-2 text-lg text-blueGray-400"></i>
-            {{getGender(actorDetail.gender)}}
-          </div>
-  
-        </div>
-  
-        <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
-          <div class="flex flex-wrap justify-center">
-            <div class="w-full lg:w-9/12 px-4">
-              <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
-                {{actorDetail.biography}}
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+<main class="profile-page">
+  <section class="relative block h-500-px">
+    <div
+      class="absolute top-0 w-full h-full bg-center bg-cover"
+      style="
+        background-image: url('https://images.unsplash.com/photo-1499336315816-097655dcfbda?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2710&q=80');
+      "
+    >
+      <span
+        id="blackOverlay"
+        class="w-full h-full absolute opacity-50 bg-black"
+      ></span>
     </div>
-  </div>
-  <div class="w-full lg:w-8/12 px-4">
-    <div class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-blueGray-100 border-0">
-      <div class="rounded-t bg-white mb-0 px-6 py-6">
-          <div class="text-center flex justify-between">
-              <h6 class="text-blueGray-700 text-xl font-bold">Películas</h6>
+    <div
+      class="top-auto bottom-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden h-70-px"
+      style="transform: translateZ(0)"
+    >
+      <svg
+        class="absolute bottom-0 overflow-hidden"
+        xmlns="http://www.w3.org/2000/svg"
+        preserveAspectRatio="none"
+        version="1.1"
+        viewBox="0 0 2560 100"
+        x="0"
+        y="0"
+      >
+        <polygon
+          class="text-blueGray-200 fill-current"
+          points="2560 0 2560 100 0 100"
+        ></polygon>
+      </svg>
+    </div>
+  </section>
+  <section class="relative py-16 bg-blueGray-200">
+    <div class="container mx-auto px-4">
+      <div
+        class="relative flex flex-col min-w-0 break-words bg-white w-full mb-6 shadow-xl rounded-lg -mt-64"
+      >
+        <div class="px-6">
+          <div class="flex flex-wrap justify-center">
+            <div class="w-full lg:w-3/12 px-4 lg:order-2 flex justify-center">
+              <div class="relative">
+                <img
+                  alt="..."
+                  [src]="getImgActor(actorDetail.profile_path)"
+                  class="shadow-xl rounded-full h-auto align-middle border-none absolute -m-24 -ml-20 lg:-ml-16 max-w-150-px"
+                />
+              </div>
+            </div>
+            <div
+              class="w-full lg:w-4/12 px-4 lg:order-3 lg:text-right lg:self-center"
+            >
+              <div class="py-6 px-3 mt-32 sm:mt-0">
+                <div
+                  class="px-5 py-3  sm:mr-2 mb-2"
+                  
+                >
+                  
+              </div>
+              </div>
+            </div>
+            <div class="w-full lg:w-4/12 px-4 lg:order-1">
+            </div>
           </div>
-      </div>  
-      <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-          <div class="flex flex-wrap">
-              <div class="w-full lg:w-4/12" *ngFor="let movie of movieDetail">
-                  <div class="relative w-full mb-3">
-                      <!--<a [routerLink]="['/movie-detail',movie.id]">
-                          <img [src]="getImgMovie(movie.poster_path)" alt="Portada película {{movie.title}}"
-                          class="border-2 border-blueGray-50 shadow" style="width: 65%;"
-                          onerror="this.src='https://www.themoviedb.org/assets/2/v4/glyphicons/basic/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg'" />
-                      </a>-->
-                      <h6 class="text-black font-bold">{{movie.title}}</h6>
-                  </div>
+          <div class="text-center mt-16">
+            <h3
+              class="text-4xl font-semibold uppercase leading-normal mb-2 text-blueGray-700 mt-16"
+            >
+              {{actorDetail.name}}
+            </h3>
+            <div
+              class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
+            >
+              <i
+                class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400 mt-4"
+              ></i>
+              {{actorDetail.place_of_birth}}
+            </div>
+            <div class="mb-2 text-blueGray-600 mt-10">
+              <i class="fas fa-venus-mars mr-2 text-lg text-blueGray-400"></i>
+              {{getGender(actorDetail.gender)}}
+            </div>
+            <div class="mb-2 text-blueGray-600">
+              <i class="fas fa-calendar mr-2 text-lg text-blueGray-400 mt-8"></i>
+              {{actorDetail.birthday}}
+            </div>
+          </div>
+          <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
+            <div class="flex flex-wrap justify-center">
+              <div class="w-full lg:w-9/12 px-4">
+                <p class="mb-4 text-lg leading-relaxed text-blueGray-700">
+                  {{actorDetail.biography}}
+                </p>
+              </div>
+            </div>
+          </div>
+            <div class="border-t mt-10" style="display: flex; flex-wrap: wrap; justify-content: center;">
+              <div style="margin: 10px; width: 300px; " *ngFor="let movie of movieDetail">
+                <span class="text-lg font-bold m-4">{{movie.title}}</span>
+                <img [src]="getImgMovie(movie)" alt="...">
+                <!--<a [routerLink]="['/movie-detail',movie.id]">Detalles</a>-->
               </div>
           </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
+  </section>
+</main>

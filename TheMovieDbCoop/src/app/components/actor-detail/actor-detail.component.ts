@@ -3,7 +3,6 @@ import { ActivatedRoute } from '@angular/router';
 import { ActorDetailResponse } from 'src/app/models/interfaces/actor-detail.interface';
 import { Actors } from 'src/app/models/interfaces/actor-list.interface';
 import { Cast } from 'src/app/models/interfaces/movie-credits.interface';
-import { MovieDetailsResponse } from 'src/app/models/interfaces/movies.interface';
 import { ActorService } from 'src/app/services/actor.service';
 import { MoviesService } from 'src/app/services/movies.service';
 import { environment } from 'src/environments/environment';
