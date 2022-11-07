@@ -39,7 +39,7 @@ export interface MovieDetailsResponse {
   production_companies: ProductionCompany[]
   production_countries: ProductionCountry[]
   release_date: string
-  revenue: number
+  revenue: number //ingresos
   runtime: number
   spoken_languages: SpokenLanguage[]
   status: string
@@ -70,4 +70,22 @@ export interface ProductionCountry {
 export interface SpokenLanguage {
   iso_639_1: string
   name: string
+}
+
+export interface MovieVideoResponse {
+  id: number
+  results: MovieVideo[]
+}
+
+export interface MovieVideo {
+  iso_639_1: string
+  iso_3166_1: string
+  name: string
+  key: string
+  site: string
+  size: number
+  type: string
+  official: boolean
+  published_at: string
+  id: string
 }
