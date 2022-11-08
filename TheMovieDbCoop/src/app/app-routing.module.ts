@@ -38,11 +38,16 @@ const routes: Routes = [
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
       { path: "actors", component: ActorListComponent},
+
+      { path: 'actor-detail/:id', component: ActorDetailComponent},
+      { path: 'movies', component: MoviesComponent},
+      { path: 'movie-detail/:id', component: MovieDetailsComponent},
+
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
   // auth views
-  {
+  /*{
     path: "auth",
     component: AuthComponent,
     children: [
@@ -50,19 +55,22 @@ const routes: Routes = [
       { path: "register", component: RegisterComponent },
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
-  },/*
+  },
   // no layout views
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },*/
-  {path: 'navbar', component: NavbarComponent},
-  {path: 'movies', component: MoviesComponent},
+  {path: "", component: IndexComponent },
   {path: 'rated-movies', component: RatedMoviesComponent},
+
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
   {path: 'movie-detail/:id', component: MovieDetailsComponent},
   {path: 'favourite', component: FavouriteMoviesComponent},
+
+  {path: '',pathMatch: 'full',redirectTo: ''},
+
 ];
 
 @NgModule({
