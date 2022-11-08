@@ -5,7 +5,6 @@ import { environment } from 'src/environments/environment';
 import { RatingDto } from '../models/dto/create-rating.dto';
 import { AccountDetailResponse } from '../models/interfaces/account-detail.interface';
 import { FilmRatedResponse, Movie, MovieDetailsResponse, Movies, MovieVideoResponse, RatedMoviesResponse } from '../models/interfaces/movies.interface';
-import { Movie, MovieDetailsResponse, Movies, MovieVideoResponse } from '../models/interfaces/movies.interface';
 
 
 @Injectable({
@@ -31,21 +30,5 @@ export class MoviesService {
     );
   }
 
-  getRatedMovies(sessionId: string, page: number): Observable<RatedMoviesResponse>{
-    return this.http.get<RatedMoviesResponse>(
-      `${environment.apiBaseUrl}/account/0/rated/movies?session_id=${sessionId}&api_key=${environment.apiKey}&page=${page}`
 
-    );
-  }
-
-  createRating(movieId: number, rating: RatingDto, sessionId: string): Observable<FilmRatedResponse>{
-    return this.http.post<FilmRatedResponse>(`${environment.apiBaseUrl}/movie/${movieId}/rating?api_key=${environment.apiKey}&session_id=${sessionId}`, rating);
-  }
-
-  getAccountId(sessionId: string): Observable<AccountDetailResponse>{
-
-    return this.http.get<AccountDetailResponse>(`
-      ${environment.apiBaseUrl}/account?api_key=${environment.apiKey}&session_id=${sessionId}
-    `);
-  }
 }

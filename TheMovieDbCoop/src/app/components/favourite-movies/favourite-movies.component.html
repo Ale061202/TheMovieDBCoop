@@ -39,35 +39,137 @@
       </ul>
     </nav>
 </div>
-<div class="relative flex flex-col min-w-0 break-words bg-white rounded mb-6 xl:mb-0 shadow-lg"
-  style="margin-right: 10px; margin-bottom: 10px;">
-  <div class="flex-auto p-4 flex-wrap">
-    <div class="flex flex-wrap">
-      <div class="relative w-full pr-4 max-w-full flex-grow flex-1">
-        <h2 class="text-blueGray-400 uppercase font-bold text-xs">
-          {{favMovie.original_title}}
-        </h2>
-        <span class="font-semibold text-xl text-blueGray-700">
-          {{favMovie.title}}
-        </span>
-      </div>
-      <div class="relative w-auto pl-4 flex-initial">
-        <div class="text-white p-3 text-center inline-flex items-center justify-center w-12 h-12 shadow-lg rounded-full"
-          style="background-color: #081C22;">
-          <span style="font-weight: bold;">{{favMovie.vote_average * 10}}%</span>
-        </div>
-      </div>
-    </div>
-    <div class="flex justify-around">
-      <div>
-        <img [src]="getPhotoUrl()" alt="" width="25%">
-      </div>
-      <div class="self-end">
-        <button *ngIf="session_id" (click)="deleteFav()"><i class="fas fa-heart" style="width: 50px;"></i></button>
-      </div>
-      <div class="self-end">
-        <a [routerLink]="['/movie-detail', favMovie.id]" style="margin-left: 5px;">Detalles</a>
-      </div>
-    </div>
-  </div>
+<div class="block w-full overflow-x-auto">
+  <!-- Projects table -->
+  <table class="items-center w-full bg-transparent border-collapse">
+    <thead>
+      <tr>
+        <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+          Nombre
+        </th>
+        <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+          VO
+        </th>
+        <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+          Popularidad
+        </th>
+        <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+          Valoración
+        </th>
+        <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+        Info
+        </th>
+        <th
+          class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+          [ngClass]="
+            color === 'light'
+              ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+              : 'bg-red-800 text-red-300 border-red-700'
+          "
+        >
+        Borrar Favorito
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let movie of favMovies">
+      <tr>
+        <th
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4 text-left flex items-center"
+        >
+          <img
+            [src]="getPhotoUrl(movie)"
+            class="h-10 w-10 bg-white rounded-full border"
+            alt="Movie Poster"
+          />
+          <span
+            class="ml-3 font-bold"
+            [ngClass]="color === 'light' ? 'text-blueGray-600' : 'text-white'"
+          >
+            {{movie.title}}
+          </span>
+        </th>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          {{movie.original_language}}
+        </td>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          {{movie.popularity}}
+        </td>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+
+          <div class="flex items-center" *ngIf="movie.vote_average != 0; else noValoration">
+            <span class="mr-2">{{movie.vote_average}}</span>
+            <div class="relative w-full">
+              <div
+                class="overflow-hidden h-2 text-xs flex rounded"
+                style="background-color: whitesmoke; width: 50%;"
+              >
+                <div
+                  [ngStyle]="{'width' : getVotePercentage(movie.vote_average) + '%', 'background-color' : getVoteColor(movie.vote_average)}"
+                  class="shadow-none flex flex-col text-center whitespace-nowrap text-white justify-center"
+                ></div>
+              </div>
+            </div>
+          </div>
+          <ng-template #noValoration>
+            <div class="relative w-full">
+              <p>Sin valoración</p>
+            </div>
+          </ng-template>
+        </td>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          <a [routerLink]="['/movie-detail', movie.id]">Detalles</a>
+        </td>
+        <td
+          class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+        >
+          <button (click)="deleteFav()">
+            <i class="fas fa-heart-broken" style="color: red;"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>

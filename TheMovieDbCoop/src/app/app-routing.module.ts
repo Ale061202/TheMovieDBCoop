@@ -25,6 +25,7 @@ import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { MovieDetailsComponent } from "./components/movie-details/movie-details.component";
 import { RatedMoviesComponent } from "./components/rated-movies/rated-movies.component";
+import { FavouriteMoviesComponent } from "./components/favourite-movies/favourite-movies.component";
 
 const routes: Routes = [
   // admin views
@@ -36,7 +37,7 @@ const routes: Routes = [
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
-      { path: "actors", component: ActorListComponent},      
+      { path: "actors", component: ActorListComponent},
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
@@ -60,7 +61,8 @@ const routes: Routes = [
   {path: 'rated-movies', component: RatedMoviesComponent},
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
-  {path: 'movie-detail/:id', component: MovieDetailsComponent}
+  {path: 'movie-detail/:id', component: MovieDetailsComponent},
+  {path: 'favourite', component: FavouriteMoviesComponent},
 ];
 
 @NgModule({

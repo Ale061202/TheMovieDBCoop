@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Movie } from 'src/app/models/interfaces/movies.interface';
+import { AccountService } from 'src/app/services/account.service';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -23,7 +24,7 @@ export class RatedMoviesComponent implements OnInit {
   sessionId: string = localStorage.getItem('session_id');
   movies: Movie[]=[];
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private accountService: AccountService) { }
 
   ngOnInit(): void {
 
@@ -31,10 +32,10 @@ export class RatedMoviesComponent implements OnInit {
   }
 
   getRatedMovies(page: number){
-    this.moviesService.getAccountId(this.sessionId).subscribe(resp => {
+    this.accountService.getAccountId(this.sessionId).subscribe(resp => {
       this.accountId = resp.id;
 
-      this.moviesService.getRatedMovies(this.sessionId, page).subscribe(resp => {
+      this.accountService.getRatedMovies(this.sessionId, page).subscribe(resp => {
         this.movies = resp.results;
       });
     });
@@ -76,9 +77,5 @@ export class RatedMoviesComponent implements OnInit {
 
     return color;
   }
-  /*
-  createRating(movie: Movie, rating: number){
-    this.moviesService.createRating(movie.id, rating);
-  }*/
 
 }
