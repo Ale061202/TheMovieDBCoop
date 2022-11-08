@@ -61,12 +61,12 @@ const routes: Routes = [
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },*/
-  {path: "", component: IndexComponent },
+  {path: "portada", component: IndexComponent },
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
   {path: 'movie-detail/:id', component: MovieDetailsComponent},
 
-  {path: '',pathMatch: 'full',redirectTo: ''},
+  {path: '',pathMatch: 'full',redirectTo: 'portada'},
 
 ];
 
