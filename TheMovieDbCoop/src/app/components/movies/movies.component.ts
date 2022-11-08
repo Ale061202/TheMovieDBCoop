@@ -1,9 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Movie } from 'src/app/models/interfaces/movies.interface';
 import { FavouriteMovieDto } from 'src/app/models/dto/favourite-movie.dto';
-import { Movie } from 'src/app/models/interfaces/movies.interface';
 import { AccountService } from 'src/app/services/account.service';
 import { MoviesService } from 'src/app/services/movies.service';
+import { Favourites } from 'src/app/models/interfaces/favourite-movies.interfaces';
 
 @Component({
   selector: 'app-movies',
@@ -78,7 +77,7 @@ export class MoviesComponent implements OnInit {
   }
 
 
-  markAsFavourite(){
+  markAsFavourite(movie: Favourites){
     let favourites = new FavouriteMovieDto;
     favourites.media_type = 'movie';
     favourites.media_id = this.popularMovies.id;

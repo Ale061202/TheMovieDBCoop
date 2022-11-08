@@ -108,6 +108,16 @@
                 : 'bg-red-800 text-red-300 border-red-700'
             "
           ></th>
+          <th
+            class="px-6 align-middle border border-solid py-3 text-xs uppercase border-l-0 border-r-0 whitespace-nowrap font-semibold text-left"
+            [ngClass]="
+              color === 'light'
+                ? 'bg-blueGray-50 text-blueGray-500 border-blueGray-100'
+                : 'bg-red-800 text-red-300 border-red-700'
+            "
+          >
+          Marcar Favorito
+          </th>
         </tr>
       </thead>
       <tbody *ngFor="let movie of movies">
@@ -165,6 +175,13 @@
             class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
           >
             <a [routerLink]="['/movie-detail', movie.id]">Detalles</a>
+          </td>
+          <td
+            class="border-t-0 px-6 align-middle border-l-0 border-r-0 text-xs whitespace-nowrap p-4"
+          >
+            <button (click)="markAsFavourite(movie)">
+              <i class="fas fa-heart"></i>
+            </button>
           </td>
         </tr>
       </tbody>

@@ -3,6 +3,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 import { RatingDto } from 'src/app/models/dto/create-rating.dto';
 import { MovieDetailsResponse, MovieVideo, MovieVideoResponse } from 'src/app/models/interfaces/movies.interface';
+import { AccountService } from 'src/app/services/account.service';
 import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
@@ -20,7 +21,7 @@ export class MovieDetailsComponent implements OnInit {
   videos: MovieVideo [] = [];
   rating: number = 0;
 
-  constructor(private movieService: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer) { }
+  constructor(private movieService: MoviesService, private route: ActivatedRoute, private sanitizer: DomSanitizer, private accountService: AccountService) { }
 
   ngOnInit(): void {
     this.getMovieDetails();
@@ -45,9 +46,10 @@ export class MovieDetailsComponent implements OnInit {
 
   rateMovie(rating: number){
     let ratingDto: RatingDto = {
-      value : rating
+      value : rating * 2
     }
-    this.movieService.createRating(this.movieId, ratingDto, localStorage.getItem('session_id') );
+    debugger
+    this.accountService.createRating(this.movieId, ratingDto, localStorage.getItem('session_id') );
   }
 
 

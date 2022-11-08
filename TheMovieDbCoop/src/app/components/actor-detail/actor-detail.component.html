@@ -96,7 +96,6 @@
           </div>
             <div class="border-t mt-10" style="display: flex; flex-wrap: wrap; justify-content: center;">
               <div style="margin: 10px; width: 300px; " *ngFor="let movie of movieDetail">
-                <span class="text-lg font-bold m-4">{{movie.title}}</span>
                 <img [src]="getImgMovie(movie)" alt="...">
                 <!--<a [routerLink]="['/movie-detail',movie.id]">Detalles</a>-->
               </div>
