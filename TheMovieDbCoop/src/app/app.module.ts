@@ -55,6 +55,7 @@ import { FavouriteMoviesComponent } from './components/favourite-movies/favourit
 import { MoviesComponent } from './components/movies/movies.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { RatedMoviesComponent } from './components/rated-movies/rated-movies.component';
+import { FormsModule } from "@angular/forms";
 
 
 @NgModule({
@@ -101,7 +102,7 @@ import { RatedMoviesComponent } from './components/rated-movies/rated-movies.com
     MovieDetailsComponent,
     RatedMoviesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
