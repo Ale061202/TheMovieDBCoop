@@ -37,7 +37,7 @@ export class NavbarComponent implements OnInit {
     this.authService.createRequestToken().subscribe((res) => {
       this.reqToken = res.request_token;
       console.log(this.reqToken);
-      window.location.href = `https://www.themoviedb.org/authenticate/${this.reqToken}?redirect_to=http://localhost:4200/navbar`
+      window.location.href = `https://www.themoviedb.org/authenticate/${this.reqToken}?redirect_to=http://localhost:4200/`
     })
   }
   logout() {
