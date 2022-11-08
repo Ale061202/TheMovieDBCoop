@@ -24,6 +24,7 @@ import { IndexComponent } from "./views/index/index.component";
 import { LandingComponent } from "./views/landing/landing.component";
 import { ProfileComponent } from "./views/profile/profile.component";
 import { MovieDetailsComponent } from "./components/movie-details/movie-details.component";
+import { RatedMoviesComponent } from "./components/rated-movies/rated-movies.component";
 
 const routes: Routes = [
   // admin views
@@ -56,6 +57,7 @@ const routes: Routes = [
   { path: "**", redirectTo: "", pathMatch: "full" },*/
   {path: 'navbar', component: NavbarComponent},
   {path: 'movies', component: MoviesComponent},
+  {path: 'rated-movies', component: RatedMoviesComponent},
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
   {path: 'movie-detail/:id', component: MovieDetailsComponent}

@@ -89,3 +89,35 @@ export interface MovieVideo {
   published_at: string
   id: string
 }
+
+export interface RatedMoviesResponse {
+  page: number
+  results: RatedMovie[]
+  total_pages: number
+  total_results: number
+}
+
+export interface RatedMovie {
+  adult: boolean
+  backdrop_path: any
+  genre_ids: number[]
+  id: number
+  original_language: string
+  original_title: string
+  overview: string
+  release_date: string
+  poster_path: any
+  popularity: number
+  title: string
+  video: boolean
+  vote_average: number
+  vote_count: number
+  rating: number
+}
+
+export interface FilmRatedResponse {
+  success:        boolean;
+  status_code:    number;
+  status_message: string;
+}
+
