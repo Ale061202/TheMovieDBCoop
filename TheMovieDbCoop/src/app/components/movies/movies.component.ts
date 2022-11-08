@@ -3,6 +3,7 @@ import { FavouriteMovieDto } from 'src/app/models/dto/favourite-movie.dto';
 import { AccountService } from 'src/app/services/account.service';
 import { MoviesService } from 'src/app/services/movies.service';
 import { Favourites } from 'src/app/models/interfaces/favourite-movies.interfaces';
+import { Movie } from 'src/app/models/interfaces/movies.interface';
 
 @Component({
   selector: 'app-movies',

@@ -68,7 +68,7 @@
       <ul class="md:flex-col md:min-w-full flex flex-col list-none">
         <li class="items-center">
           <a
-            [routerLink]="['/admin/dashboard']"
+            [routerLink]="['/admin/actors']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminDashboard="routerLinkActive"
@@ -90,7 +90,7 @@
 
         <li class="items-center">
           <a
-            [routerLink]="['/admin/settings']"
+            [routerLink]="['/admin/movies']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminSettings="routerLinkActive"
@@ -111,8 +111,8 @@
         </li>
 
         <li class="items-center">
-          <a
-            [routerLink]="['/admin/tables']"
+          <a *ngIf="sessionId"
+            [routerLink]="['/admin/favourite']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminTables="routerLinkActive"
@@ -133,8 +133,8 @@
         </li>
 
         <li class="items-center">
-          <a
-            [routerLink]="['/admin/maps']"
+          <a *ngIf="sessionId"
+            [routerLink]="['/admin/rated-movies']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
             #adminMaps="routerLinkActive"

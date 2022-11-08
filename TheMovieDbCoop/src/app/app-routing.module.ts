@@ -38,11 +38,11 @@ const routes: Routes = [
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
       { path: "actors", component: ActorListComponent},
-
       { path: 'actor-detail/:id', component: ActorDetailComponent},
       { path: 'movies', component: MoviesComponent},
       { path: 'movie-detail/:id', component: MovieDetailsComponent},
-
+      { path: 'favourite', component: FavouriteMoviesComponent},
+      { path: 'rated-movies', component: RatedMoviesComponent},
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
@@ -62,12 +62,9 @@ const routes: Routes = [
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },*/
   {path: "", component: IndexComponent },
-  {path: 'rated-movies', component: RatedMoviesComponent},
-
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
   {path: 'movie-detail/:id', component: MovieDetailsComponent},
-  {path: 'favourite', component: FavouriteMoviesComponent},
 
   {path: '',pathMatch: 'full',redirectTo: ''},
 
