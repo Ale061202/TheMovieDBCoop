@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Movie } from 'src/app/models/interfaces/movies.interface';
 import { FavouriteMovieDto } from 'src/app/models/dto/favourite-movie.dto';
 import { AccountService } from 'src/app/services/account.service';
 import { MoviesService } from 'src/app/services/movies.service';

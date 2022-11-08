@@ -37,17 +37,21 @@ const routes: Routes = [
       { path: "settings", component: SettingsComponent },
       { path: "tables", component: TablesComponent },
       { path: "maps", component: MapsComponent },
+<<<<<<< HEAD
       { path: "actors", component: ActorListComponent},
 
       { path: 'actor-detail/:id', component: ActorDetailComponent},
       { path: 'movies', component: MoviesComponent},
       { path: 'movie-detail/:id', component: MovieDetailsComponent},
 
+=======
+      { path: "actors", component: ActorListComponent},      
+>>>>>>> parent of 8dfcead (adding  updates)
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
   // auth views
-  /*{
+  {
     path: "auth",
     component: AuthComponent,
     children: [
@@ -55,14 +59,16 @@ const routes: Routes = [
       { path: "register", component: RegisterComponent },
       { path: "", redirectTo: "login", pathMatch: "full" },
     ],
-  },
+  },/*
   // no layout views
   { path: "profile", component: ProfileComponent },
   { path: "landing", component: LandingComponent },
   { path: "", component: IndexComponent },
   { path: "**", redirectTo: "", pathMatch: "full" },*/
-  {path: "", component: IndexComponent },
+  {path: 'navbar', component: NavbarComponent},
+  {path: 'movies', component: MoviesComponent},
   {path: 'rated-movies', component: RatedMoviesComponent},
+<<<<<<< HEAD
 
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
@@ -71,6 +77,11 @@ const routes: Routes = [
 
   {path: '',pathMatch: 'full',redirectTo: ''},
 
+=======
+  {path: '',pathMatch: 'full',redirectTo: 'navbar'},
+  {path: 'actor-detail/:id', component: ActorDetailComponent},
+  {path: 'movie-detail/:id', component: MovieDetailsComponent}
+>>>>>>> parent of 8dfcead (adding  updates)
 ];
 
 @NgModule({
