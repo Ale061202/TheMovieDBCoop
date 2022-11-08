@@ -6,6 +6,9 @@ import { createPopper } from "@popperjs/core";
   templateUrl: "./index-dropdown.component.html",
 })
 export class IndexDropdownComponent implements OnInit {
+
+  sessionId = !(localStorage.getItem('session_id')==undefined);
+
   @Input() approved = false;
   dropdownPopoverShow = false;
   @ViewChild("btnDropdownRef", { static: false }) btnDropdownRef: ElementRef;
