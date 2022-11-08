@@ -44,9 +44,12 @@ const routes: Routes = [
       { path: 'movies', component: MoviesComponent},
       { path: 'movie-detail/:id', component: MovieDetailsComponent},
 
+<<<<<<< HEAD
 =======
       { path: "actors", component: ActorListComponent},      
 >>>>>>> parent of 8dfcead (adding  updates)
+=======
+>>>>>>> eee45e8fab648c0e11980364141fd0d84b0090a6
       { path: "", redirectTo: "dashboard", pathMatch: "full" },
     ],
   },
@@ -69,6 +72,9 @@ const routes: Routes = [
   {path: 'movies', component: MoviesComponent},
   {path: 'rated-movies', component: RatedMoviesComponent},
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> eee45e8fab648c0e11980364141fd0d84b0090a6
 
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
@@ -77,11 +83,14 @@ const routes: Routes = [
 
   {path: '',pathMatch: 'full',redirectTo: ''},
 
+<<<<<<< HEAD
 =======
   {path: '',pathMatch: 'full',redirectTo: 'navbar'},
   {path: 'actor-detail/:id', component: ActorDetailComponent},
   {path: 'movie-detail/:id', component: MovieDetailsComponent}
 >>>>>>> parent of 8dfcead (adding  updates)
+=======
+>>>>>>> eee45e8fab648c0e11980364141fd0d84b0090a6
 ];
 
 @NgModule({
