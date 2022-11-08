@@ -45,11 +45,13 @@ export class MovieDetailsComponent implements OnInit {
   }
 
   rateMovie(rating: number){
-    let ratingDto: RatingDto = {
-      value : rating * 2
-    }
-    debugger
-    this.accountService.createRating(this.movieId, ratingDto, localStorage.getItem('session_id') );
+    let ratingDto = new RatingDto();
+    ratingDto.value = rating * 2;
+    this.accountService.createRating(this.movieId, ratingDto, localStorage.getItem('session_id') ).subscribe((res) => {
+      if(res.success) {
+        alert('Movie rated sucessfully with a '+ ratingDto.value);
+      }
+    });
   }
 
 

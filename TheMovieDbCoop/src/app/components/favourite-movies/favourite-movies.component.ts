@@ -36,7 +36,6 @@ export class FavouriteMoviesComponent implements OnInit {
     if(localStorage.getItem('session_id') !== null) {
       this.session_id = true;
       this.accountService.getFavouriteMovies(this.sessionId, this.page).subscribe(resp => {
-        debugger
         this.favMovies = resp.results;
       })
     }

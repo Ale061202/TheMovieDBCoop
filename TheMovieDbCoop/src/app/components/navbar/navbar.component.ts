@@ -33,6 +33,11 @@ export class NavbarComponent implements OnInit {
 
 
   }
+
+  getSessionId(): boolean{
+    return !(localStorage.getItem('session_id')==undefined);
+  }
+
   requestToken(){
     this.authService.createRequestToken().subscribe((res) => {
       this.reqToken = res.request_token;
