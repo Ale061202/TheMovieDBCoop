@@ -19,7 +19,7 @@
     >
       <span class="block sm:hidden"> Tv & Movies </span>
       <span class="hidden sm:block"> Tv & Movies </span>
-    </a>    
+    </a>
     <!-- Collapse -->
     <div
       class="md:flex md:flex-col md:items-stretch md:opacity-100 md:relative md:mt-4 md:shadow-none shadow absolute top-0 left-0 right-0 z-40 overflow-y-auto overflow-x-hidden h-auto items-center flex-1 rounded"
@@ -83,7 +83,7 @@
               [ngClass]="
                 adminDashboard.isActive ? 'opacity-75' : 'text-blueGray-300'
               "
-            ></i>            
+            ></i>
             Actores
           </a>
         </li>
@@ -111,7 +111,7 @@
         </li>
 
         <li class="items-center">
-          <a *ngIf="sessionId"
+          <a *ngIf="getSessionId()"
             [routerLink]="['/admin/favourite']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive
@@ -133,7 +133,7 @@
         </li>
 
         <li class="items-center">
-          <a *ngIf="sessionId"
+          <a *ngIf="getSessionId()"
             [routerLink]="['/admin/rated-movies']"
             class="text-xs uppercase py-3 font-bold block"
             routerLinkActive

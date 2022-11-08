@@ -15,4 +15,8 @@ export class SidebarComponent implements OnInit {
   toggleCollapseShow(classes) {
     this.collapseShow = classes;
   }
+
+  getSessionId(): boolean{
+    return !(localStorage.getItem('session_id')==undefined);
+  }
 }

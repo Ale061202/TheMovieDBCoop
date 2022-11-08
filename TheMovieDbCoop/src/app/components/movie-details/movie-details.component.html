@@ -117,7 +117,7 @@
               class="text-sm leading-normal mt-0 mb-2 text-blueGray-400 font-bold uppercase"
             >
               <i
-                class="fas fa-map-marker-alt mr-2 text-lg text-blueGray-400"
+                class="fas fa-theater-masks mr-2 text-lg text-blueGray-400"
               ></i>
               <span *ngFor="let genre of movieDetails.genres">
                 <span
@@ -164,6 +164,24 @@
                   </span>
                 </ng-template>
               </span>
+            </div>
+            <div class="mb-2 text-blueGray-600 mt-10">
+              <h3
+              class="text-3xl font-semibold leading-normal mb-2 text-blueGray-700 mb-2">
+              Valoración
+              </h3>
+              <div style="text-align: center; margin-top: 5%;">
+                <select name="Valoración" id="rating" [(ngModel)]="rating">
+                  <option value=1>1</option>
+                  <option value=2>2</option>
+                  <option value=3>3</option>
+                  <option value=4>4</option>
+                  <option value=5>5</option>
+                </select>
+                <button class="button" *ngIf="rating" type="button" (click)="rateMovie(rating)">
+                  Valorar
+                </button>
+              </div>
             </div>
           </div>
           <div class="mt-10 py-10 border-t border-blueGray-200 text-center">
@@ -216,17 +234,6 @@
               ></iframe>
             </ng-template>
           </div>
-          <div style="text-align: center;">
-            <select name="Valoración" id="rating" [(ngModel)]="rating">
-              <option value=1>1</option>
-              <option value=2>2</option>
-              <option value=3>3</option>
-              <option value=4>4</option>
-              <option value=5>5</option>
-            </select>
-            <button *ngIf="rating" type="button" (click)="rateMovie(rating)">Valorar</button>
-          </div>
-
         </div>
       </div>
     </div>

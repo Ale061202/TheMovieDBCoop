@@ -33,4 +33,8 @@ export class IndexDropdownComponent implements OnInit {
       }
     );
   }
+
+  getSessionId(): boolean{
+    return !(localStorage.getItem('session_id')==undefined);
+  }
 }
