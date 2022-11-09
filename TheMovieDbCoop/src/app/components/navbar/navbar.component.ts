@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { CreateSessionDto } from "src/app/models/dto/create-session.dto";
 import { DeleteSessionDto } from "src/app/models/dto/delete-session.dto";
 import { AuthService } from 'src/app/services/auth.service';
-import { environment } from 'src/environments/environment';
+import { environment } from 'src/environments/environment.prod';
 
 @Component({
   selector: "app-navbar",
@@ -42,7 +42,7 @@ export class NavbarComponent implements OnInit {
     this.authService.createRequestToken().subscribe((res) => {
       this.reqToken = res.request_token;
       console.log(this.reqToken);
-      window.location.href = `https://www.themoviedb.org/authenticate/${this.reqToken}?redirect_to=http://localhost:4200/`
+      window.location.href = `https://www.themoviedb.org/authenticate/${this.reqToken}?redirect_to=${environment.baseUrl}/`
     })
   }
   logout() {
